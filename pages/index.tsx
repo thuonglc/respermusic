@@ -6,6 +6,7 @@ import { useMe } from '../lib/hooks'
 import prisma from '../lib/prisma'
 import MenuHeader from '../components/menuHeader'
 import { IArtist } from '../lib/type'
+import Seo from '../components/seo'
 
 const avatarUrl =
   'https://res.cloudinary.com/dfxk0fqfp/image/upload/v1659951855/respermusic/img3_cryptopunks_vtbul8.jpg'
@@ -15,6 +16,15 @@ const Home = ({ artists }) => {
 
   return (
     <Box h="100%">
+      <Seo
+        data={{
+          title: 'Respermusic | Thuong Luong',
+          description: 'A demo music web app building by Nextjs',
+          url: 'https://respermusic.vercel.app/',
+          thumbnailUrl:
+            'https://res.cloudinary.com/dfxk0fqfp/image/upload/v1659951855/respermusic/img3_cryptopunks_vtbul8.jpg',
+        }}
+      />
       <MenuHeader user={user} loading={isLoading} />
       <GradientLayout
         roundImage
